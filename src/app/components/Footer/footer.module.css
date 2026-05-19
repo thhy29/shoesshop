@@ -1,0 +1,167 @@
+/* TỔNG THỂ FOOTER - Tràn viền */
+.item3 {
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #f0f0f0; /* Đường kẻ mờ ở trên cùng */
+  padding: 60px 0 40px 0; /* Tăng padding để footer "thở" */
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center; /* Căn giữa nội dung footer */
+}
+
+/* CONTAINER NỘI DUNG CHÍNH - Chìa khóa để tràn viền nhưng không dính sát mép */
+.footer {
+  width: 100%; /* Chiếm toàn bộ chiều rộng có thể */
+  /* Sử dụng padding % để đảm bảo khoảng cách an toàn ở hai bên màn hình */
+  padding-left: 5%; 
+  padding-right: 5%; 
+  box-sizing: border-box; /* Rất quan trọng để padding không làm tăng chiều rộng thực tế */
+}
+
+/* 4 CỘT NỘI DUNG */
+.footerSection {
+  display: grid;
+  /* Ép đúng 4 cột đều nhau, bạn có thể tăng giảm minmax tùy ý */
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #eee;
+}
+
+/* TIÊU ĐỀ CỘT */
+.footerSection strong {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #2d3436;
+  text-transform: uppercase; /* Tiêu đề mạnh mẽ hơn */
+  letter-spacing: 0.8px;
+}
+
+/* DANH SÁCH LIÊN KẾT */
+.footerSection ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footerSection ul li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #636e72;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  align-items: center;
+}
+
+/* Hiệu ứng khi hover vào link */
+.footerSection ul li:hover {
+  color: #d63031; /* Chuyển sang màu đỏ năng động */
+  transform: translateX(8px); /* Nhích nhẹ sang phải khi di chuột vào */
+  cursor: pointer;
+}
+
+/* WEBSITE CÙNG TẬP ĐOÀN */
+.website {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* LOGO TẬP ĐOÀN (Giả định icon cho đẹp) */
+.website li i {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.website li i:hover {
+  background: #fff1f0;
+  border-color: #ff4d4f;
+  transform: translateY(-5px); /* Hiệu ứng bay lên nhẹ */
+  box-shadow: 0 5px 15px rgba(255, 77, 79, 0.2);
+}
+
+/* PHẦN BẢN QUYỀN (COPYRIGHT) */
+.copyright {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #b2bec3;
+  line-height: 2; /* Tăng độ thoáng cho dòng chữ copyright */
+  text-align: justify; /* Căn đều nội dung copyright */
+}
+
+/* RESPONSIVE: Màn hình điện thoại */
+@media (max-width: 900px) {
+  .footer {
+    padding-left: 15px; /* Giảm padding trên mobile */
+    padding-right: 15px; 
+  }
+  
+  .footerSection {
+    grid-template-columns: 1fr 1fr; /* Chia 2 cột trên mobile */
+    gap: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .footerSection {
+    grid-template-columns: 1fr; /* Chia 1 cột trên mobile nhỏ */
+    text-align: center; /* Căn giữa nội dung khi chỉ có 1 cột */
+  }
+  
+  .footerSection ul li {
+    justify-content: center; /* Căn giữa danh sách con */
+  }
+  
+  .footerSection ul li:hover {
+    transform: none; /* Tắt hiệu ứng nhích sang phải */
+  }
+  
+  .website {
+    justify-content: center; /* Căn giữa logo tập đoàn */
+  }
+}
+/* Khung chứa logo */
+.logoBox {
+  width: 45px;
+  height: 45px;
+  background: #ffffff; /* Nền trắng để nổi bật logo */
+  border: 1px solid #eee; /* Đường viền mảnh */
+  border-radius: 10px; /* Bo góc hiện đại */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 5px; /* Khoảng cách từ logo đến viền khung */
+}
+
+/* Khi di chuột vào cái khung */
+.logoBox:hover {
+  border-color: #ff4d4f; /* Đổi màu viền khi hover */
+  transform: translateY(-5px); /* Hiệu ứng bay lên */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Đảm bảo ảnh bên trong khung luôn vừa vặn */
+.logoBox img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Căn chỉnh danh sách logo nằm ngang */
+.website {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Khoảng cách giữa các khung */
+  padding: 0;
+  list-style: none;
+  margin-top: 15px;
+}

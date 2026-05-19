@@ -1,0 +1,167 @@
+/* Container chính */
+.mainContent {
+  display: grid;
+  /* Chia đúng 5 cột bằng nhau */
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 15px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 15px;
+}
+
+/* Thẻ sản phẩm */
+.product {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f0f0f0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Hiệu ứng nhấc bổng thẻ khi di chuột */
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-color: #ff4d4f;
+}
+
+/* Khung chứa ảnh */
+.productImage {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #f8f8f8;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hiệu ứng hình ảnh động (Phóng to + Xoay nhẹ) */
+.productImage img {
+  width: 85%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.product:hover .productImage img {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* Tên sản phẩm */
+.productName {
+  height: 38px;
+  margin-bottom: 8px;
+}
+
+.productName h5 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Giá cả và con số đẹp */
+.productPrice {
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 17px;
+  color: #d63031;
+  font-weight: 800; /* Làm số giá tiền nổi bật */
+  display: block;
+}
+
+.discount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.oldPrice {
+  font-size: 12px;
+  color: #95a5a6;
+  text-decoration: line-through;
+}
+
+.percent {
+  font-size: 11px;
+  background: #fff1f0;
+  color: #ff4d4f;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Thanh Flash Sale (Giữ hình động màu gradient) */
+.productRemain {
+  height: 16px;
+  background: #dfe6e9;
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Dải màu cam vàng chạy động */
+.productRemain::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 75%; /* Bạn có thể chỉnh lại % tùy ý */
+  background: linear-gradient(90deg, #ff9f43, #ff4d4f);
+  border-radius: 20px;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.3);
+}
+
+.remainText {
+  position: relative;
+  z-index: 2;
+  font-size: 9px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* Nút Mua ngay rực rỡ */
+.buyButton {
+  margin-top: auto;
+  background: linear-gradient(45deg, #ff4d4f, #ff7a45);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(255, 77, 79, 0.2);
+}
+
+.buyButton:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 15px rgba(255, 77, 79, 0.4);
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 1024px) {
+  .mainContent { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .mainContent { grid-template-columns: repeat(2, 1fr); }
+}

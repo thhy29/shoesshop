@@ -1,0 +1,106 @@
+.container {
+  padding: 40px 20px;
+  max-width: 1100px; /* Tăng độ rộng tổng thể để ảnh có không gian */
+  margin: 0 auto;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Cho phần ảnh chiếm nhiều không gian hơn phần chữ */
+  gap: 50px;
+  align-items: start; /* Giúp nội dung không bị kéo dãn theo chiều dọc */
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  /* Thay vì dùng height cố định (500px), ta dùng aspect-ratio để giữ tỉ lệ ảnh */
+  aspect-ratio: 4 / 3; 
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #f9f9f9; /* Màu nền nhẹ khi ảnh chưa load xong */
+  box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+}
+
+/* Quan trọng: Điều chỉnh cách hiển thị ảnh */
+.imageWrapper img {
+  object-fit: contain !important; /* Thay 'cover' bằng 'contain' nếu bạn muốn thấy TOÀN BỘ tấm ảnh không bị mất góc */
+  padding: 10px; /* Tạo khoảng trống nhỏ xung quanh ảnh cho thoáng */
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.currentPrice {
+  color: #d71920;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.oldPrice {
+  color: #aaa;
+  text-decoration: line-through;
+  font-size: 18px;
+}
+
+.description {
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.description h3 {
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #000;
+  color: #fff;
+  padding: 18px 40px;
+  border: none;
+  border-radius: 50px; /* Bo tròn nút bấm cho hiện đại */
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  background-color: #333;
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 850px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  .imageWrapper {
+    aspect-ratio: 1 / 1; /* Trên mobile cho ảnh vuông để tối ưu diện tích */
+  }
+}
