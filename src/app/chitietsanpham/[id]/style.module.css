@@ -1,0 +1,204 @@
+/* ===== CONTAINER ===== */
+.container {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  background: #f6f7fb;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== LEFT ===== */
+.left {
+  flex: 1;
+}
+
+.mainImage {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #eee;
+}
+
+.mainImage img {
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.subImages {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.subImages img {
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.subImages img:hover {
+  transform: scale(1.05);
+}
+
+.activeImg {
+  border: 2px solid #2563eb !important;
+}
+
+/* ===== RIGHT ===== */
+.right {
+  flex: 1;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.right:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* ===== TITLE ===== */
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* ===== CODE ===== */
+.code {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* ===== PRICE ===== */
+.price {
+  font-size: 26px;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+/* ===== COLOR ===== */
+.color {
+  margin-bottom: 20px;
+}
+
+/* ===== SIZE ===== */
+.sizeBox {
+  margin-bottom: 20px;
+}
+
+.sizeBox p {
+  margin-bottom: 8px;
+}
+
+.sizeBox button {
+  margin-right: 8px;
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.sizeBox button:hover {
+  border-color: #2563eb;
+}
+
+.activeSize {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* ===== QUANTITY ===== */
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.quantity button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.quantity button:hover {
+  background: #f1f1f1;
+}
+
+.quantity span {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===== BUTTON ===== */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.add,
+.buy {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* nút thêm giỏ */
+.add {
+  border: 2px solid #2563eb;
+  background: #fff;
+  color: #2563eb;
+}
+
+.add:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* nút mua */
+.buy {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+}
+
+.buy:hover {
+  opacity: 0.9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .price {
+    font-size: 22px;
+  }
+}

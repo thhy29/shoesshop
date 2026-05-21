@@ -1,0 +1,26 @@
+.header {
+    background: #00cfd1;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .nav ul {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav li {
+    list-style: none;
+    cursor: pointer;
+  }
+  
+  .nav li:hover {
+    color: white;
+  }
